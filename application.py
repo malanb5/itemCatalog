@@ -200,8 +200,8 @@ def home():
                            show_categories=True)
 
 
-@app.route('/catalogs/<category_name>/')
-@app.route('/catalogs/<category_name>/items/')
+@app.route('/catalogs/<path:category_name>/')
+@app.route('/catalogs/<path:category_name>/items/')
 def showCategory(category_name):
     """
     List all items in the selected category
@@ -251,7 +251,7 @@ def newCategory():
         return render_template('new.html')
 
 
-@app.route('/catalogs/<category_name>/edit/', methods=['GET', 'POST'])
+@app.route('/catalogs/<path:category_name>/edit/', methods=['GET', 'POST'])
 @login_required
 def editCategory(category_name):
     """
@@ -304,7 +304,7 @@ def editCategory(category_name):
             category=category_to_edit)
 
 
-@app.route('/catalogs/<category_name>/delete/', methods=['GET', 'POST'])
+@app.route('/catalogs/<path:category_name>/delete/', methods=['GET', 'POST'])
 @login_required
 def deleteCategory(category_name):
     """
@@ -344,7 +344,7 @@ def deleteCategory(category_name):
             category_name=category_name)
 
 
-@app.route('/catalogs/<category_name>/items/<item_name>/')
+@app.route('/catalogs/<path:category_name>/items/<path:item_name>/')
 def showItem(category_name, item_name):
     """
     Show details of selected item
@@ -353,7 +353,7 @@ def showItem(category_name, item_name):
     return render_template('items/show.html', item=item_to_show)
 
 
-@app.route('/catalogs/<category_name>/items/new/', methods=['GET', 'POST'])
+@app.route('/catalogs/<path:category_name>/items/new/', methods=['GET', 'POST'])
 @login_required
 def newItem(category_name):
     """
@@ -420,7 +420,7 @@ def newItem(category_name):
 
 
 @app.route(
-    '/catalogs/<category_name>/items/<item_name>/edit/',
+    '/catalogs/<path:category_name>/items/<path:item_name>/edit/',
     methods=['GET', 'POST'])
 @login_required
 def editItem(category_name, item_name):
@@ -487,7 +487,7 @@ def editItem(category_name, item_name):
 
 
 @app.route(
-    '/catalogs/<category_name>/items/<item_name>/delete/',
+    '/catalogs/<path:category_name>/items/<path:item_name>/delete/',
     methods=['GET', 'POST'])
 @login_required
 def deleteItem(category_name, item_name):
@@ -633,14 +633,14 @@ Add JSON API Endpoints
 
 
 # JSON API for catalog
-@app.route('/catalogs/<category_name>/items/JSON')
+@app.route('/catalogs/<path:category_name>/items/JSON')
 def CatalogItemsJSON(category_name):
     json_items = items(category_name=category_name)
     return jsonify(CategoryItems=[i.serialize for i in json_items])
 
 
 # JSON API for item
-@app.route('/catalogs/<category_name>/items/<item_name>/JSON')
+@app.route('/catalogs/<path:category_name>/items/<item_name>/JSON')
 def ItemJSON(category_name, item_name):
     json_item = item(item_name, category_name)
     return jsonify(CategoryItem=json_item.serialize)

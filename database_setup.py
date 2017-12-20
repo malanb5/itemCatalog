@@ -29,7 +29,8 @@ class Category(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False, unique=True)
     user_id = Column(Integer, ForeignKey('users.id'))
-    user = relationship(User, cascade="all, delete-orphan", single_parent=True)
+    user = relationship(User)
+    items = relationship('Item', cascade='all, delete-orphan')
 
     @property
     def serialize(self):
