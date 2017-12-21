@@ -1,17 +1,17 @@
 # ShopMe
-A simple demo catalog web application with Google OAuth
-Store and query data using an SQL database
-API JSON endpoints for all catalog data
-
-Matt Bladek
+A simple demo catalog web application with Google OAuth Store and query data using an SQL database
+API JSON endpoints for all catalog data.  Project was deployed to a Apache 2.
 
 
-## Dependencies of Software and Libraries Used
-The application was developed using Vagrant 2.0.1 and Virtual Box virtual environment 2.3.5
-virtualizing Ubuntu 16.04-i386
+### Hosting
+The project was deployed to an Amazon Lightsail server running Apache 2.4.18 on Ubuntu 16.04-i386.
 
+http://ec2-34-208-123-72.us-west-2.compute.amazonaws.com/ or http://34.208.123.72/
 
-* Python 2.7.11 was used in development
+## Python Requirements
+
+Python 2.7.11 was used to develop the web server
+
 List of requirements is as follows: 
 Flask==0.12.2
 Flask-HTTPAuth==3.2.3
@@ -33,6 +33,7 @@ urllib3==1.22
 webencodings==0.5.1
 Werkzeug==0.12.2
 
+## Other Requirements
 * Bootstrap
 	- HTML, CSS library
 * Jquery - Javascript library utilized for API calls more specifically the AJAX library for asynchronous calls
@@ -51,12 +52,3 @@ Contains the information needed for Google API OAuth2 to authenticate sessions
 
 * html
 The html, css, and js for the project is contained the templates and static folders.
-
-### Hosting
-The project was deployed to an Amazon Lightsail server at: 
-
-http://ec2-34-208-123-72.us-west-2.compute.amazonaws.com/
-
-or
-
-http://34.208.123.72/
