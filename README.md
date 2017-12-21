@@ -13,28 +13,22 @@ http://ec2-34-208-123-72.us-west-2.compute.amazonaws.com/ or http://34.208.123.7
 Python 2.7.11 was used to develop the web server
 
 List of requirements is as follows: 
-Flask==0.12.2
-
-Flask-HTTPAuth==3.2.3
-
-Flask-Login==0.1.3
-
-Flask-SQLAlchemy==2.3.0
-html5lib==1.0b10
-httplib2==0.10.3
-Jinja2==2.9.6
-MarkupSafe==1.0
-oauth2client==4.1.2
-pep8==1.7.1
-psycopg2==2.7.3.1
-pycodestyle==2.3.1
-pyparsing==2.2.0
-redis==2.10.6
-requests==2.18.4
-SQLAlchemy==1.1.14
-urllib3==1.22
-webencodings==0.5.1
-Werkzeug==0.12.2
+|Flask==0.12.2 |
+|Flask-HTTPAuth==3.2.3|
+|Flask-Login==0.1.3|
+|Flask-SQLAlchemy==2.3.0|
+|html5lib==1.0b10|
+|httplib2==0.10.3|
+|Jinja2==2.9.6|
+|MarkupSafe==1.0|
+|oauth2client==4.1.2|
+|pep8==1.7.1|
+|psycopg2==2.7.3.1|
+|requests==2.18.4|
+|SQLAlchemy==1.1.14|
+|urllib3==1.22|
+|webencodings==0.5.1|
+|Werkzeug==0.12.2|
 
 ## Other Requirements
 * Bootstrap
