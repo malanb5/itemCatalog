@@ -11,14 +11,28 @@ The application was developed using Vagrant 2.0.1 and Virtual Box virtual enviro
 virtualizing Ubuntu 16.04-i386
 
 
-* Python 2.7.11
-	* SQLite 3.9.2
-	* Flask 0.9
-	* SQLAlchemy 1.0.12
-	* oauth2client
-	* httplib2
-	* json
-	* requests
+* Python 2.7.11 was used in development
+List of requirements is as follows: 
+Flask==0.12.2
+Flask-HTTPAuth==3.2.3
+Flask-Login==0.1.3
+Flask-SQLAlchemy==2.3.0
+html5lib==1.0b10
+httplib2==0.10.3
+Jinja2==2.9.6
+MarkupSafe==1.0
+oauth2client==4.1.2
+pep8==1.7.1
+psycopg2==2.7.3.1
+pycodestyle==2.3.1
+pyparsing==2.2.0
+redis==2.10.6
+requests==2.18.4
+SQLAlchemy==1.1.14
+urllib3==1.22
+webencodings==0.5.1
+Werkzeug==0.12.2
+
 * Bootstrap
 	- HTML, CSS library
 * Jquery - Javascript library utilized for API calls more specifically the AJAX library for asynchronous calls
@@ -39,11 +53,10 @@ Contains the information needed for Google API OAuth2 to authenticate sessions
 The html, css, and js for the project is contained the templates and static folders.
 
 ### Hosting
-The project is hosted on a local server
-* http://localhost:8000
+The project was deployed to an Amazon Lightsail server at: 
 
-### Instructions on Running the Demo web application
-1) Install the required dependencies and software as described above
-2) Launch the virtual environment using the commands vagrant up and vagrant ssh in the terminal
-3) Set up the database for the webserver by executing the python script database_setup.py using the command python database_setup.py
-4) Run the web server by executing the python file using the command python application.py
+http://ec2-34-208-123-72.us-west-2.compute.amazonaws.com/
+
+or
+
+http://34.208.123.72/
