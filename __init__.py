@@ -6,6 +6,7 @@
 
 """
 
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import sessionmaker
@@ -22,14 +23,13 @@ from flask import make_response, jsonify
 import requests
 from functools import wraps
 
-
 app = Flask(__name__)
 
 """
 Connects to sqlite database using sqlalchemy API
 """
 
-engine = create_engine('sqlite:///catalogapp.db')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
@@ -37,7 +37,7 @@ session = DBSession()
 
 # set contant variables
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/FlaskApp/FlaskApp/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "ShopMe"
 
 
@@ -70,7 +70,7 @@ def gconnect():
 
     try:
         # Upgrade the authorization code into a credentials object
-        oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/FlaskApp/FlaskApp/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
