@@ -2,3 +2,7 @@
 *.pyc
 catalogapp.db
 LightsailDefaultPrivateKey-us-west-2.pem
+*client_secres.json
+.idea
+__pychache__
+requirements.txt
