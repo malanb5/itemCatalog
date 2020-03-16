@@ -1,6 +1,6 @@
 python==2.7.11
 sqlite==3.9.2
-flask==0.9
+flask==1.0
 sqlalchemy==1.0.12
 httplib2
 json
